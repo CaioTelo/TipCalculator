@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tip calculato</title>
+        <!-- Link Bootstrap -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <style>
+            .calculadora{
+                background: #2E2E2E;
+                border-radius: 20px;
+                box-shadow: 1px 1px 5px #000;
+                margin-top: 150px;
+            }
+        </style>
+    </head>
+    <body style="background: cadetblue;" >
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <div class="calculadora p-5 ">
+                    <h1 class="text-light">Dividindo a Conta</h1>
+                    <br>
+                    <form  class="form-group">
+                        <label  class="text-light">Valor da Conta:</label>
+                        <input id="valor_conta"  class="form-control" type="text" placeholder="250">  
+                        <br>
+                        <label class="text-light">Dividir para:</label>
+                        <input id="pessoas_conta" class="form-control" type="text" placeholder="2" >
+                        <br>
+                        <input onclick="calc()" type="button" class="btn btn-outline-success" value="calcular">
+                        <br><br>
+                        <label for="" class="text-light">Cada um vai pagar:</label>
+                        <input id="resultado_conta" disabled="disabled" type="text" class="form-control" placeholder="125" >
+                    </form>
+                </div>     
+            </div>
+        </div>
+    </div>
+        <script>
+            function calc (){
+                var numero = document.getElementById('valor_conta').value
+                var pessoas = document.getElementById('pessoas_conta').value
+                var total = numero/pessoas
+
+                
+
+                document.getElementById('valor_conta').value = 'R$ ' + numero
+                document.getElementById('pessoas_conta').value = pessoas + ' pessoas'
+                document.getElementById('resultado_conta').value = 'R$ ' + total
+            }
+        </script>
+    </body>
+</html>
